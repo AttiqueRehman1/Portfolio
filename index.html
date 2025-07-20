@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Attique Ur Rehman - .NET Full Stack Developer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Open Sans", sans-serif;
+        }
+
+        .w3-text-custom-teal {
+            color: #008080 !important;
+        }
+
+        .w3-custom-header-bg {
+            background-color: #2e3a59 !important; /* Dark blue/grey for header and footer */
+            color: #fff;
+        }
+
+        .cv-profile-img {
+            border-radius: 50%; /* Make the image round */
+            width: 150px; /* Adjust size as needed */
+            height: 150px; /* Ensure equal height for round shape */
+            object-fit: cover; /* Cover the area without distortion */
+            border: 5px solid #fff; /* White border around the image */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+            margin-bottom: 20px;
+        }
+
+        .w3-container.section-title {
+            padding: 16px;
+            border-bottom: 2px solid #eee;
+            margin-bottom: 15px;
+        }
+
+            .w3-container.section-title h2 {
+                margin: 0;
+                padding: 0;
+                font-weight: 600;
+                color: #333;
+            }
+
+        .w3-container.section-content {
+            padding-bottom: 16px;
+        }
+
+        .skill-category {
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+
+            .skill-category h5 {
+                font-weight: 600;
+                color: #008080;
+                margin-bottom: 5px;
+            }
+
+        .skill-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px; /* Space between tags */
+        }
+
+            .skill-list li {
+                background-color: #e0f2f1; /* Light teal background for tags */
+                color: #008080;
+                padding: 5px 10px;
+                border-radius: 4px;
+                font-size: 0.9em;
+                white-space: nowrap; /* Prevent wrapping within a tag */
+            }
+
+        /* Styles for Work Experience and Projects */
+        .job-details, .project-card {
+            background-color: #f9f9f9; /* Slightly off-white background */
+            border-left: 5px solid #008080; /* Teal border on the left */
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Soft shadow */
+            border-radius: 4px;
+        }
+
+            .job-details h5, .project-card h5 {
+                color: #2e3a59; /* Darker blue for titles */
+                margin-top: 0;
+                margin-bottom: 5px;
+                font-weight: 600;
+            }
+
+            .job-details h6 {
+                color: #555; /* Slightly darker grey for dates */
+                font-size: 0.9em;
+                margin-bottom: 10px;
+            }
+
+            .job-details ul {
+                list-style-type: none; /* Remove default bullet points */
+                padding-left: 0;
+                margin-left: 0;
+            }
+
+                .job-details ul li {
+                    position: relative;
+                    padding-left: 20px; /* Space for custom bullet */
+                    margin-bottom: 8px;
+                    line-height: 1.4;
+                }
+
+                    .job-details ul li:before {
+                        content: "\f00c"; /* Font Awesome checkmark icon */
+                        font-family: FontAwesome;
+                        position: absolute;
+                        left: 0;
+                        color: #008080; /* Teal color for bullet */
+                        font-size: 0.9em;
+                        top: 2px;
+                    }
+
+            .project-card .project-tech-tags {
+                list-style: none;
+                padding: 0;
+                margin: 10px 0 0 0;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5px;
+            }
+
+                .project-card .project-tech-tags li {
+                    background-color: #cee7e7; /* Lighter teal for project tags */
+                    color: #006060;
+                    padding: 3px 8px;
+                    border-radius: 3px;
+                    font-size: 0.8em;
+                }
+
+        .social-icons a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 24px;
+            transition: color 0.3s ease;
+        }
+
+            .social-icons a:hover {
+                color: #ddd;
+            }
+
+        /* Sticky Header */
+        .sticky-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #2e3a59;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: none; /* Hidden by default */
+            transition: all 0.3s ease-in-out;
+            height: 0;
+            overflow: hidden;
+            letter-spacing: 2px;
+            font-size: 1.2em;
+        }
+
+            .sticky-header.show {
+                display: block;
+                height: auto; /* Allow content to dictate height */
+                padding: 10px 0;
+            }
+
+        /* Padding for content when sticky header is active */
+        body.sticky-padding-active .w3-content {
+            padding-top: 60px; /* Adjust based on sticky header height */
+        }
+    </style>
+</head>
+<body class="w3-light-grey">
+
+    <div id="stickyHeader" class="sticky-header">
+        ATTIQUE UR REHMAN <span style="font-size:0.7em;">| .NET Core Full Stack Developer</span>
+    </div>
+
+    <header id="mainHeader" class="w3-container w3-custom-header-bg w3-center" style="padding: 32px 16px;">
+        <img src="dp.jpeg" alt="Attique Ur Rehman" class="cv-profile-img">
+        <h1 style="letter-spacing: 4px; margin-bottom: 5px;">ATTIQUE UR REHMAN</h1>
+        <h3 style="margin-top: 0px;">.NET Core Full Stack Developer</h3>
+    </header>
+
+    <div class="w3-content w3-margin-top" style="max-width:1200px;">
+        <div class="w3-row-padding">
+
+            <div class="w3-third">
+                <div class="w3-white w3-text-grey w3-card-4">
+                    <div class="w3-container w3-padding-16">
+                        <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-custom-teal"></i>.NET Full Stack Developer</p>
+                        <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-custom-teal"></i>attiqkhan197@gmail.com</p>
+                        <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-custom-teal"></i>+92 312 8672595</p>
+                        <p><i class="fa fa-linkedin fa-fw w3-margin-right w3-large w3-text-custom-teal"></i><a href="https://www.linkedin.com/in/attique-rehman-b8581022a/" target="_blank">LinkedIn Profile</a></p>
+                        <hr>
+
+                        <p class="w3-large w3-text-theme"><strong><i class="fa fa-cogs fa-fw w3-margin-right w3-text-custom-teal"></i>Skills</strong></p>
+                        <div class="skill-category">
+                            <h5>Backend & Frameworks</h5>
+                            <ul class="skill-list">
+                                <li>.NET Core</li>
+                                <li>C#</li>
+                                <li>Blazor (Server & WASM)</li>
+                                <li>APIs (REST & SOAP)</li>
+                                <li>Quartz</li>
+                                <li>RabbitMQ</li>
+                                <li>Microservices</li>
+                                <li>Clean Architecture</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h5>Frontend & UI</h5>
+                            <ul class="skill-list">
+                                <li>HTML5</li>
+                                <li>CSS</li>
+                                <li>Bootstrap</li>
+                                <li>Radzen</li>
+                                <li>Telerik</li>
+                                <li>Syncfusion</li>
+                                <li>SignalR</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h5>Databases</h5>
+                            <ul class="skill-list">
+                                <li>MS SQL Server</li>
+                                <li>PostgreSQL</li>
+                                <li>SQLite</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h5>Mobile Development</h5>
+                            <ul class="skill-list">
+                                <li>Android App Dev (Java)</li>
+                                <li>Flutter</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h5>Tools & Other</h5>
+                            <ul class="skill-list">
+                                <li>Git</li>
+                                <li>Jira</li>
+                                <li>Digital Signature</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h5>Development Environment & SDKs</h5>
+                            <ul class="skill-list">
+                                <li>Visual Studio 2022</li>
+                                <li>Visual Studio Code</li>
+                                <li>.NET SDK</li>
+                                <li>SQL Server Management Studio (SSMS)</li>
+                                <li>Azure DevOps</li>
+                                <li>Postman</li>
+                                <li>Docker</li>
+                            </ul>
+                        </div>
+                        <hr>
+
+                        <p class="w3-large w3-text-theme"><strong><i class="fa fa-language fa-fw w3-margin-right w3-text-custom-teal"></i>Languages</strong></p>
+                        <p>English</p>
+                        <p>Urdu</p>
+                        <p>Pashto</p>
+                        <br>
+                    </div>
+                </div><br>
+
+                <div class="w3-white w3-card-4">
+                    <div class="w3-container section-title">
+                        <h2 class="w3-text-grey"><i class="fa fa-graduation-cap fa-fw w3-margin-right w3-xxlarge w3-text-custom-teal"></i>Education</h2>
+                    </div>
+                    <div class="w3-container section-content">
+                        <h5 class="w3-opacity"><strong>PMAS AAUR - Barani Institute Rawalpindi</strong></h5>
+                        <h6 class="w3-text-custom-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Feb 2019 - Mar 2023</h6>
+                        <p>Bachelor of Science in Computer Science</p>
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <div class="w3-twothird">
+
+                <div class="w3-container w3-card w3-white w3-margin-bottom">
+                    <div class="w3-container section-title">
+                        <h2 class="w3-text-grey"><i class="fa fa-bullseye fa-fw w3-margin-right w3-xxlarge w3-text-custom-teal"></i>Career Objective</h2>
+                    </div>
+                    <div class="w3-container section-content">
+                        <p>Seeking a challenging career that leverages my technical and analytical skills, fostering continuous learning and professional growth within a dynamic development environment.</p>
+                    </div>
+                </div>
+
+                <div class="w3-container w3-card w3-white w3-margin-bottom">
+                    <div class="w3-container section-title">
+                        <h2 class="w3-text-grey"><i class="fa fa-user fa-fw w3-margin-right w3-xxlarge w3-text-custom-teal"></i>Professional Summary</h2>
+                    </div>
+                    <div class="w3-container section-content">
+                        <p>Hardworking full-stack developer with a strong focus on usability, performance, and scalable solutions. Experienced across the full project lifecycle, from design to deployment. Proven ability to communicate effectively and collaborate with cross-functional teams to deliver high-quality software.</p>
+                    </div>
+                </div>
+
+                <div class="w3-container w3-card w3-white w3-margin-bottom">
+                    <div class="w3-container section-title">
+                        <h2 class="w3-text-grey"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-custom-teal"></i>Work Experience</h2>
+                    </div>
+
+                    <div class="w3-container section-content job-details">
+                        <h5><strong>Jr. Software Engineer / Business Analytics</strong></h5>
+                        <h6><i class="fa fa-calendar fa-fw w3-margin-right"></i>May 2023 - <span class="w3-tag w3-custom-teal w3-round">Current</span></h6>
+                        <ul>
+                            <li>Full-stack development utilizing <strong>Blazor Server</strong> and <strong>.NET Core</strong> for robust web applications.</li>
+                            <li>Designed and implemented <strong>RESTful API development</strong> and seamless integration solutions.</li>
+                            <li>Managed and optimized <strong>bilingual UI</strong> (English/Arabic) to cater to diverse user bases.</li>
+                            <li>Proficiently worked with <strong>PostgreSQL</strong> and <strong>SQL Server</strong> for efficient data management and queries.</li>
+                            <li>Applied advanced technologies including <strong>RabbitMQ</strong> for message queuing, and integrated <strong>Telerik</strong>, <strong>Radzen</strong> components while adhering to <strong>Clean Architecture</strong> principles.</li>
+                            <li>Contributed to the development of a comprehensive <strong>Document Management System (DMS)</strong>, applying <strong>microservices architecture</strong> for scalability and modularity.</li>
+                        </ul>
+                    </div>
+
+                    <div class="w3-container section-content job-details">
+                        <h5><strong>Android Developer / Freelance</strong></h5>
+                        <h6><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun 2023 – Mar 2024</h6>
+                        <ul>
+                            <li>Independently designed and developed <strong>Android mobile applications</strong> using <strong>Java</strong> and <strong>SQLite</strong>, focusing on user experience and data persistence.</li>
+                        </ul>
+                    </div>
+
+                    <div class="w3-container section-content job-details" style="border-bottom: none;">
+                        <h5><strong>Content Creator / YouTube</strong></h5>
+                        <h6><i class="fa fa-calendar fa-fw w3-margin-right"></i>Feb 2019 – Sep 2023</h6>
+                        <ul>
+                            <li>Created engaging <strong>technical content</strong> for a broad audience, leading to the significant achievement of the <strong>YouTube Silver Play Button</strong> for exceeding subscriber milestones.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="w3-container w3-card w3-white w3-margin-bottom">
+                    <div class="w3-container section-title">
+                        <h2 class="w3-text-grey"><i class="fa fa-code fa-fw w3-margin-right w3-xxlarge w3-text-custom-teal"></i>Personal Projects</h2>
+                    </div>
+                    <div class="w3-container section-content">
+                        <div class="project-card">
+                            <h5><strong>Radzen Grid Pagination Library</strong></h5>
+                            <p>Developed a reusable library to enhance pagination functionality for Radzen grids in Blazor applications.</p>
+                            <ul class="project-tech-tags">
+                                <li>Blazor</li>
+                                <li>Radzen</li>
+                            </ul>
+                        </div>
+                        <div class="project-card">
+                            <h5><strong>Todo Website</strong></h5>
+                            <p>A full-stack web application for task management, demonstrating front-end and back-end integration.</p>
+                            <ul class="project-tech-tags">
+                                <li>React JS</li>
+                                <li>.NET Core</li>
+                            </ul>
+                        </div>
+                        <div class="project-card">
+                            <h5><strong>ChatBot UI</strong></h5>
+                            <p>An interactive user interface for a chatbot, integrating with Python-based APIs.</p>
+                            <ul class="project-tech-tags">
+                                <li>Blazor</li>
+                                <li>Python APIs</li>
+                            </ul>
+                        </div>
+                        <div class="project-card">
+                            <h5><strong>Various Android Applications</strong></h5>
+                            <p>Collection of mobile projects including an FYP App, Covid Tracker, Tailor Shop App, and an Easy Khata Clone.</p>
+                            <ul class="project-tech-tags">
+                                <li>Android (Java)</li>
+                                <li>SQLite</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="w3-container w3-custom-header-bg w3-center w3-margin-top w3-padding-32">
+        <p>Connect with me!</p>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/attique-rehman-b8581022a/" target="_blank" class="fa fa-linkedin w3-hover-opacity"></a>
+            <a href="https://github.com/AttiqueRehman1" target="_blank" class="fa fa-github w3-hover-opacity"></a>
+            <a href="#" target="_blank" class="fa fa-youtube w3-hover-opacity"></a>
+        </div>
+    </footer>
+
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        var mainHeader = document.getElementById("mainHeader");
+        var stickyHeader = document.getElementById("stickyHeader");
+        var sticky = mainHeader.offsetHeight; // Get the height of the main header
+
+        function myFunction() {
+            if (window.pageYOffset > sticky) {
+                stickyHeader.classList.add("show");
+                document.body.classList.add("sticky-padding-active"); // Add padding to body when sticky
+            } else {
+                stickyHeader.classList.remove("show");
+                document.body.classList.remove("sticky-padding-active"); // Remove padding when not sticky
+            }
+        }
+    </script>
+</body>
+</html>
